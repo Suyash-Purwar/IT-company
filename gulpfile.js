@@ -10,9 +10,9 @@ const sendHtml = () => {
         .pipe(dest("dist/"));
 }
 
-const sendImg = () => {
-    return src("src/assets/img/*.{jpg,png}")
-        .pipe(dest("dist/assets/img/*{jpg,png}"));
+const sendAssets = () => {
+    return src("src/assets/**/*")
+        .pipe(dest("dist/assets/"));
 }
 
 const compileSass = () => {
@@ -48,12 +48,12 @@ const watchTask = () => {
     watch('src/**/*.html', series(sendHtml, browsersyncReload));
     watch('src/sass/**/*.scss', series(compileSass, browsersyncReload));
     watch('src/js/*.js', series(jsmin, browsersyncReload));
-    watch('src/assets/img/*.{jpg,png}', series(sendImg, browsersyncReload));
+    watch('src/assets/**/*', series(sendAssets, browsersyncReload));
 }
 
 exports.default = series(
     sendHtml,
-    sendImg,
+    sendAssets,
     compileSass,
     jsmin,
     browswesyncServe,

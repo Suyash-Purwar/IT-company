@@ -1,0 +1,18 @@
+@mixin absTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin absBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin absCenterXY {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
