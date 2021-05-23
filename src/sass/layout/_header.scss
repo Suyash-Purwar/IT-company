@@ -1,13 +1,9 @@
 .header {
     position: relative;
-    width: 100%;
-    grid-column: full-start / full-end;
-
 
     &__waves {
-        position: absolute;
-
         @include absBottom;
+        width: 100%;
     }
 
     &--layout-large {
