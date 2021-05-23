@@ -18,7 +18,6 @@ body {
     line-height: 1.65;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: [full-start] minmax(2rem, 15rem) repeat(10, [col-start] minmax(min-content, 1fr) [col-end]) minmax(2rem, 15rem) [full-end];
+a {
+    text-decoration: none;
 }

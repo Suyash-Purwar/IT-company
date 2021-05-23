@@ -1,0 +1,8 @@
+.paragraph {
+    font-size: 1.5rem;
+
+    &--white {
+        color: $color-white;
+        font-weight: 400;
+    }
+}
