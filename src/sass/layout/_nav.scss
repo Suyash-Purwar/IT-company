@@ -3,9 +3,10 @@
     z-index: 1;
     width: 100%;
     padding: 1rem;
+    position: fixed;
 
     @include respond(tab-portrait) {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 2rem;
     }
 
     &__wrapper {
@@ -16,10 +17,13 @@
     }
 
     &__logo-wrapper {
+        display: flex;
+        align-items: center;
+
         img {
             width: 80%;
-            height: 100%;
-
+            fill: $color-grey-dark;
+            
             @include respond(tab-portrait) {
                 width: 60%;
             }
@@ -46,6 +50,13 @@
 }
 
 .sidenav {
+    position: relative;
+    display: none;
+
+    @include respond(tab-portrait) {
+        display: block;
+    }
+
     &__checkbox {
         display: none;
     }
@@ -54,25 +65,24 @@
         background-color: $color-white;
         height: 5rem;
         width: 5rem;
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
+        display: block;
         border-radius: 100%;
         z-index: 2000;
         cursor: pointer;
         text-align: center;
+        position: relative;
     }
 
     &__background {
-        height: 3rem;
+        z-index: 500;
         width: 3rem;
-        background: linear-gradient(to bottom left, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+        height: 3rem;
         position: fixed;
-        border-radius: 100%;
         top: 3rem;
         right: 3rem;
-        z-index: 500;
-
+        // background: linear-gradient(to bottom left, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+        background-color: $color-white;
+        border-radius: 100%;
         transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
@@ -82,7 +92,6 @@
         left: 0;
         position: fixed;
         z-index: 1000;
-
         width: 0;
         opacity: 0;
         transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -99,24 +108,25 @@
     }
 
     &__item {
-        margin: 1rem;
+        margin: 2rem 1rem;
     }
 
     &__link {
         &:link,
         &:visited {
             display: inline-block;
-            color: $color-white;
+            color: $color-grey-dark;
+            letter-spacing: 2px;
             padding: 1rem 3rem;
-            font-size: 2rem;
-            font-weight: 400;
+            font-size: 4rem;
+            font-weight: 700;
             text-transform: uppercase;
         }
     }
 
     &__icon {
-        position: relative;
-        top: 2.3rem;
+        position: absolute;
+        @include absCenterXY;
 
         &,
         &::after,
@@ -147,9 +157,6 @@
         width: 100%;
         opacity: 1;
     }
-
-    &__button:hover &__icon::before { top: -1rem }
-    &__button:hover &__icon::after { top: 1rem }
 
     &__checkbox:checked + &__button &__icon {
         & { background-color: transparent }
