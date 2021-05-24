@@ -1,8 +1,12 @@
 .nav {
     @include absTop;
-    margin-top: 1rem;
     z-index: 1;
     width: 100%;
+    padding: 1rem;
+
+    @include respond(tab-portrait) {
+        padding: 1.5rem 1rem;
+    }
 
     &__wrapper {
         margin: 0 auto;
@@ -15,12 +19,20 @@
         img {
             width: 80%;
             height: 100%;
+
+            @include respond(tab-portrait) {
+                width: 60%;
+            }
         }
     }
 
     &__items {
         display: flex;
         align-items: center;
+
+        @include respond(tab-portrait) {
+            display: none;
+        }    
     }
 
     &__item {
@@ -29,6 +41,126 @@
 
         &:not(:last-child) {
             margin-right: 1rem;
+        }
+    }
+}
+
+.sidenav {
+    &__checkbox {
+        display: none;
+    }
+
+    &__button {
+        background-color: $color-white;
+        height: 5rem;
+        width: 5rem;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        border-radius: 100%;
+        z-index: 2000;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    &__background {
+        height: 3rem;
+        width: 3rem;
+        background: linear-gradient(to bottom left, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+        position: fixed;
+        border-radius: 100%;
+        top: 3rem;
+        right: 3rem;
+        z-index: 500;
+
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    &__nav {
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1000;
+
+        width: 0;
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &__list {
+        @include absCenterXY;
+        list-style-type: none;
+        text-align: center;
+
+        span {
+            margin-right: 1.7rem;
+        }
+    }
+
+    &__item {
+        margin: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            display: inline-block;
+            color: $color-white;
+            padding: 1rem 3rem;
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        top: 2.3rem;
+
+        &,
+        &::after,
+        &::before {
+            width: 2rem;
+            height: 2px;
+            background-color: $color-grey-dark;
+            display: inline-block;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::after { top: .8rem }
+        &::before { top: -.8rem }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(100);
+    }
+
+    &__checkbox:checked ~ &__nav {
+        width: 100%;
+        opacity: 1;
+    }
+
+    &__button:hover &__icon::before { top: -1rem }
+    &__button:hover &__icon::after { top: 1rem }
+
+    &__checkbox:checked + &__button &__icon {
+        & { background-color: transparent }
+        &::after { 
+            top: 0;
+            transform: rotate(135deg);
+        }
+
+        &::before {
+            top: 0;
+            transform: rotate(-135deg);
         }
     }
 }

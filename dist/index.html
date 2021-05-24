@@ -26,18 +26,36 @@
         </div>
     </nav>
 
+    <div class="sidenav">
+        <input type="checkbox" class = "sidenav__checkbox" id = "navi-toggle">
+
+        <label for="navi-toggle" class="sidenav__button">
+            <span class="sidenav__icon">&nbsp;</span>
+        </label>
+
+        <div class = "sidenav__background">&nbsp;</div>
+
+        <nav class="sidenav__nav">
+            <ul class="sidenav__list">
+                <li class="sidenav__item"><a href="#" class="sidenav__link"><span>01</span>Services</a></li>
+                <li class="sidenav__item"><a href="#" class="sidenav__link"><span>02</span>Work</a></li>
+                <li class="sidenav__item"><a href="#" class="sidenav__link"><span>03</span>About</a></li>
+                <li class="sidenav__item"><a href="#" class="sidenav__link"><span>04</span>Blogs</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <header class="header header--layout-large">
 
         <!-- Waves -->
-        <svg class="header__waves">
-            <use href="#header-waves"></use>
+        <svg class="header__waves" viewBox="0 0 1920 248.834">
+            <use href="#header-wave"></use>
         </svg>
     </header>
 
-    <!-- SVSs -->
-
-    <svg viewBox="0 0 1920 248.834">
-        <symbol id="header-waves">
+    <!-- SVGs -->
+    <svg width="0" height="0">
+        <symbol id="header-wave">
             <path d="M0,34.248v90.627c239.888,99.01,502.544,121.866,761.328,68.53,68.8-14.173,134.768-37.326,204.176-49.088,94.4-16.01,179.968,22.707,264.9,65.673,94.288,47.7,187.2,81.127,291.52,71.405,138.448-12.986,275.936-75.767,398.08-148.3V34.248Z" transform="translate(1920 283.083) rotate(180)" fill="#fff"/>
             <path d="M0,0V85.843a453.113,453.113,0,0,0,252.8,51.925C365.376,127.809,470.928,76,583.68,68.225c118.144-8.085,236.064,31.3,349.12,65.388,110.832,33.38,221.28,46.139,335.04,24.256,57.84-11.127,111.76-33.083,167.12-54.41C1583.184,46.361,1780.8-26.5,1920,97.3V0Z" transform="translate(1920 168.728) rotate(180)" fill="#fff" opacity="0.25"/>
             <path d="M0,148.721v28.912c20.8,26.12,44.224,50.792,76.3,69.587,82.752,48.528,187.7,48.194,283.024,24.165,49.84-12.559,96.144-32.257,143.472-49.246,65.472-23.509,135.568-56.917,209.328-61.458,58.016-3.526,113.44,11.656,157.76,39.05,50.832,31.416,99.712,76.714,165.808,90.325,64.7,13.351,130.16-8.278,190.608-30.042s120.256-48.256,187.072-53.267c95.568-7.238,181.248,28.31,270.24,48.058,48.32,10.715,94.4,7.634,139.344-9.28,35.888-13.475,76.8-33.321,97.04-60.926V146.017Z" transform="translate(1920 315.083) rotate(180)" fill="#fff" opacity="0.5"/>
