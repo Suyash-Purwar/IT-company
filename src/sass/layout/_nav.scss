@@ -2,8 +2,10 @@
     @include absTop;
     z-index: 1;
     width: 100%;
-    padding: 1rem;
+    padding: 2rem 1rem;
     position: fixed;
+    
+    transition: all .5s;
 
     @include respond(tab-portrait) {
         padding: 1.5rem 2rem;
@@ -17,15 +19,16 @@
     }
 
     &__logo-wrapper {
-        display: flex;
-        align-items: center;
+        flex-basis: 15rem;
 
-        img {
-            width: 80%;
-            fill: $color-grey-dark;
+        .nav__logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            fill: $color-white;
             
             @include respond(tab-portrait) {
-                width: 60%;
+                width: 100%;
             }
         }
     }
@@ -41,11 +44,21 @@
 
     &__item {
         display: block;
-        padding: 1.5rem;
 
         &:not(:last-child) {
+            padding: 1.5rem;
             margin-right: 1rem;
         }
+    }
+
+    &__call-to-action {
+        background-color: $color-white;
+        padding: .6rem 2.1rem;
+        border-radius: .4rem;
+        margin-left: 1.5rem;
+        color: $primary-color;
+        font-size: 1.6rem;
+        font-weight: 500;
     }
 }
 
@@ -57,29 +70,14 @@
         display: block;
     }
 
-    &__background {
-        visibility: hidden;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba($color-black, 0.6);
-        z-index: 50;
-        opacity: 0;
-        transition: opacity .2s;
-    }
-
     &__checkbox {
         display: none;
     }
 
     &__button {
-        background-color: $color-white;
-        height: 5rem;
-        width: 5rem;
+        width: 4rem;
+        height: 4rem;
         display: block;
-        border-radius: 100%;
         z-index: 100;
         cursor: pointer;
         text-align: center;
@@ -87,12 +85,13 @@
     }
 
     &__nav {
+        touch-action: none;
         position: fixed;
         top: 0;
         right: 0;
         visibility: hidden;
         background-color: $color-white;
-        width: 75vw;
+        width: 100vw;
         height: 100vh;
         z-index: 75;
         
@@ -102,41 +101,56 @@
     }
 
     &__list {
+        position: relative;
+        top: 9rem;
         list-style-type: none;
-        text-align: center;
-
-        span {
-            margin-right: 1.7rem;
-        }
     }
 
     &__item {
-        margin: 2rem 1rem;
+        margin: 2.5rem;
+
+        &:last-child {
+            margin-top: 5rem;
+        }
     }
 
     &__link {
+        width: 100%;
+
         &:link,
         &:visited {
-            display: inline-block;
-            color: $color-grey-dark;
-            letter-spacing: 2px;
-            padding: 1rem 3rem;
-            font-size: 4rem;
-            font-weight: 700;
-            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            color: $color-grey-medium;
+            font-size: 2.2rem;
+            font-weight: 500;;
+        }
+    }
+
+    &__call-to-action {
+        background-color: $primary-color;
+        color: $color-white;
+        font-size: 2.2rem;
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        border-radius: .4rem;
+
+        i {
+            margin-left: 1rem;
+            font-size: 1.8rem;
         }
     }
 
     &__icon {
-        position: absolute;
         @include absCenterXY;
 
         &,
         &::after,
         &::before {
-            width: 2rem;
+            width: 3rem;
             height: 2px;
-            background-color: $color-grey-dark;
+            background-color: $color-white;
+            border-radius: 1rem;
             display: inline-block;
         }
 
@@ -148,8 +162,8 @@
             transition: all .2s;
         }
 
-        &::after { top: .8rem }
-        &::before { top: -.8rem }
+        &::after { top: .9rem }
+        &::before { top: -.9rem }
     }
 
     &__checkbox:checked ~ &__nav {
@@ -158,21 +172,18 @@
         opacity: 1;
     }
 
-    &__checkbox:checked ~ &__background {
-        visibility: visible;
-        opacity: 1;
-    }
-
     &__checkbox:checked + &__button &__icon {
         & { background-color: transparent }
         &::after { 
             top: 0;
             transform: rotate(135deg);
+            background-color: $color-grey-dark;
         }
 
         &::before {
             top: 0;
             transform: rotate(-135deg);
+            background-color: $color-grey-dark;
         }
     }
 }
