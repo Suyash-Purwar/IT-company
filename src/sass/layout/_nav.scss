@@ -8,7 +8,7 @@
     transition: all .5s;
 
     @include respond(tab-portrait) {
-        padding: 1.5rem 2rem;
+        padding: 1.8rem 2rem;
     }
 
     &__wrapper {
@@ -16,6 +16,7 @@
         max-width: $grid-max-width;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__logo-wrapper {
@@ -26,10 +27,6 @@
             width: 100%;
             height: 100%;
             fill: $color-white;
-            
-            @include respond(tab-portrait) {
-                width: 100%;
-            }
         }
     }
 
@@ -44,6 +41,8 @@
 
     &__item {
         display: block;
+        color: $color-white;
+        font-size: 1.6rem;
 
         &:not(:last-child) {
             padding: 1.5rem;
@@ -75,8 +74,8 @@
     }
 
     &__button {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 2rem;
         display: block;
         z-index: 100;
         cursor: pointer;
@@ -97,7 +96,7 @@
         
         opacity: 0;
         transform: translateX(75vw);
-        transition: all .5s ease-in-out;
+        transition: all .2s ease-in-out;
     }
 
     &__list {
@@ -142,28 +141,26 @@
     }
 
     &__icon {
-        @include absCenterXY;
-
-        &,
-        &::after,
-        &::before {
+        &--1,
+        &--2,
+        &--3 {
+            display: block;
             width: 3rem;
             height: 2px;
             background-color: $color-white;
             border-radius: 1rem;
-            display: inline-block;
-        }
-
-        &::after,
-        &::before {
-            content: '';
             position: absolute;
-            left: 0;
             transition: all .2s;
         }
 
-        &::after { top: .9rem }
-        &::before { top: -.9rem }
+        &--1 { top: 0 }
+
+        &--2 {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--3 { bottom: 0 }
     }
 
     &__checkbox:checked ~ &__nav {
@@ -173,17 +170,14 @@
     }
 
     &__checkbox:checked + &__button &__icon {
-        & { background-color: transparent }
-        &::after { 
-            top: 0;
+        &--1 { 
+            top: 50%;
             transform: rotate(135deg);
-            background-color: $color-grey-dark;
         }
 
-        &::before {
-            top: 0;
+        &--3 {
+            top: 50%;
             transform: rotate(-135deg);
-            background-color: $color-grey-dark;
         }
     }
 }
