@@ -1,0 +1,62 @@
+[class^="button-"] {
+    letter-spacing: .5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: $primary-color;
+}
+
+.button-primary {
+    transition: all .3s;
+
+    &--shw-blue {
+        box-shadow: .6rem .6rem 0 $box-shadow-color;
+
+        &:hover { box-shadow: .8rem .8rem $box-shadow-color; transform: translateY(-3px) }
+        &:active { box-shadow: .6rem .6rem $box-shadow-color; transform: translateY(0) }
+    }
+
+    &--shw--black {
+        box-shadow: .6rem .6rem 0 $color-black;
+
+        &:hover { box-shadow: .8rem .8rem 0 $color-black; transform: translateY(-3px) }
+        &:active { box-shadow: .6rem .6rem 0 $color-black; transform: translateY(0) }
+    }
+
+    &--blue {
+        background-color: $primary-color;
+        color: $color-white;
+        border: 3px solid $primary-color;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $primary-color;
+        border: 3px solid $color-white;
+    }
+}
+
+.button-secondary {
+    border: 3px solid $primary-color;
+    background-color: $color-white;
+    box-shadow: .6rem .6rem 0 $box-shadow-color;
+    transition: all .3s;
+
+    &:hover { box-shadow: .8rem .8rem $box-shadow-color; transform: translateY(-3px) }
+    &:active { box-shadow: .6rem .6rem $box-shadow-color; transform: translateY(0) }
+}
+
+.button-tertiary {
+    transition: all .3s;
+    &--white {
+        border: 3px solid $color-white;
+    }
+
+    &--blue {
+        border: 3px solid $primary-color;
+    }
+}
