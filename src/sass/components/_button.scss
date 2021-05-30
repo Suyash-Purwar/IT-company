@@ -8,10 +8,10 @@
     display: inline-block;
     font-size: 1.5rem;
     color: $primary-color;
+    transition: all .3s;
 }
 
 .button-primary {
-    transition: all .3s;
 
     &--shw-blue {
         box-shadow: .6rem .6rem 0 $box-shadow-color;
@@ -44,14 +44,13 @@
     border: 3px solid $primary-color;
     background-color: $color-white;
     box-shadow: .6rem .6rem 0 $box-shadow-color;
-    transition: all .3s;
 
     &:hover { box-shadow: .8rem .8rem $box-shadow-color; transform: translateY(-3px) }
     &:active { box-shadow: .6rem .6rem $box-shadow-color; transform: translateY(0) }
 }
 
 .button-tertiary {
-    transition: all .3s;
+
     &--white {
         border: 3px solid $color-white;
     }
