@@ -1,0 +1,13 @@
+.margin-r-small { margin-right: 1.5rem }
+.margin-r-medium { 
+    margin-right: 2.5rem;
+
+    @include respond(phone) {
+        margin-right: 1.5rem;
+    }
+}
+
+.margin-t-small { margin-top: 1.5rem }
+.margin-t-medium { margin-top: 3rem }
+.margin-t-big { margin-top: 4.5rem }
+.margin-t-huge { margin-top: 6rem }

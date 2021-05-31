@@ -6,3 +6,69 @@
         font-weight: 400;
     }
 }
+
+.header {
+    &__title {
+        font-weight: 800;
+        color: $color-white;
+        line-height: 1;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    
+        &--small {
+            font-size: 4.7rem;
+
+            @include respond(tab-landscape) {
+                font-size: 4.5rem;
+            }
+    
+            @include respond(tab-portrait) {
+    
+                .header__title-top {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    display: block;
+                    margin-bottom: .5rem;
+                }
+            }
+    
+            @include respond(tab-portrait-s) {
+                width: 90%;
+                margin: 0 auto;
+                font-size: 5rem;
+                margin-bottom: 4rem;
+    
+                .header__title-top {
+                    font-size: 2rem;
+                }
+            }
+    
+            @include respond(phone) {
+                width: 100%;
+            }
+    
+            @media (max-width: 31.25em) {
+                font-size: 4rem;
+    
+                .header__title-top {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        &--big {
+            font-size: 7rem;
+        }   
+    }
+
+    &__subtitle {
+        font-size: 1.8rem;
+        color: $color-white;
+        font-weight: 400;
+
+        @include respond(tab-portrait-s) {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+}

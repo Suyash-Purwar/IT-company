@@ -7,8 +7,10 @@ $color-grey-light: #707070;
 $color-grey-medium: #494949;
 $color-grey-dark: #2b2b2b;
 
-$box-shadow-color: lighten(#226ce0, 30%);
+$box-shadow-color-blue: lighten(#226ce0, 30%);
+$box-shadow-color-black: rgba($color-black, .3);
 
 $font-family: 'Montserrat', sans-serif;
 
 $grid-max-width: 114rem;
+$grid-max-width-portrait: 100rem; // 880px

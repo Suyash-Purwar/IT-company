@@ -17,10 +17,17 @@
     transform: translate(-50%, -50%);
 }
 
+@mixin absCenterY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:          Phone
-600 - 900px:        Tablet portrait
+600 - 800px:        Tablet portrait small
+800 - 900px:        Tablet portrait
 900 - 1200px:       Tablet landscape
 1200 - 1800px:      is where normal styles apply
 1800+:              Big desktop
@@ -37,6 +44,12 @@ $breakpoint argument choices:
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         @media (max-width: 37.5em) {  // 600px
+            @content
+        };
+    }
+
+    @if $breakpoint == tab-portrait-s { // 800px
+        @media (max-width: 50em) {
             @content
         };
     }

@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(12, [col-start] minmax(min-content, 1fr) [col-end]);
     grid-gap: 1rem;
+    padding: 0 1rem;
 
     &__full { grid-column: span 12; }
     &__half { grid-column: span 6; }
@@ -22,8 +23,16 @@
     &__span11 { grid-column:  span 11; }
     &__span12 { grid-column:  span 12; }
 
+    &__align-v {
+        align-items: center;
+    }
+
+    @include respond(tab-portrait) {
+        max-width: $grid-max-width-portrait;
+    }
+
     // For debugging purpose
-    // [class^="grid__"] {
-    //     background-color: lightseagreen;
-    // }
+    [class^="grid__"] {
+        // background-color: lightseagreen;
+    }
 }

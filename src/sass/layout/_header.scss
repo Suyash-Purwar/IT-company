@@ -1,13 +1,118 @@
 .header {
     position: relative;
+    overflow: hidden;
+
+    &__content-box {
+        height: 100vh;
+        z-index: 2;
+        position: relative;
+
+        @include respond(tab-portrait) {
+            height: 60vh;
+        }
+
+        @include respond(phone) {
+            height: 90vh;
+        }
+
+        &--left {
+            grid-column: col-start 1 / col-end 7;
+        }
+
+        &--right {
+            grid-column: col-start 8 / -1;
+        }
+
+        @include respond(tab-portrait) {
+            &--left {
+                grid-column: col-start 1 / col-end 6;
+            }
+
+            &--right {
+                grid-column: col-start 7 / -1;
+            }
+        }
+
+        @include respond(tab-portrait-s) {
+            &--left {
+                grid-column: col-start 2 / col-end 11;
+                text-align: center;
+            }
+
+            &--right {
+                display: none;
+            }
+        }
+        
+        @include respond(phone) {
+            &--left {
+                grid-column: col-start 1 / -1;
+            }
+        }
+    }
+
+    &__img {
+        width: 115%;
+        transform: translate(-4rem, 2.3rem);
+
+        @media (max-width: 68.75em) {
+            transform: translate(-4.5rem, 2.3rem);
+        }
+
+        @include respond(tab-portrait) {
+            width: 110%;
+            transform: translateX(-3rem);
+        }
+    }
 
     &__waves {
         @include absBottom;
     }
 
+    &__circle {
+        overflow: hidden;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 8%;
+        left: 10%;
+
+        @include respond(tab-portrait-s) {
+            display: block;
+        }
+
+        @include respond(phone) {
+            top: 5%;
+            width: 120%;
+            left: -5%;
+        }
+
+        @media (max-width: 31.25em) {
+            top: 10%;
+            width: 160%;
+            left: -23%;
+        }
+    }
+
     &--layout-large {
         background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
         height: 127vh;
+
+        @include respond(tab-landscape) {
+            height: 122vh;
+        }
+
+        @media (max-width: 68.75em) {
+            height: 120vh;
+        }
+
+        @include respond(tab-portrait) {
+            height: 70vh;
+        }
+
+        @include respond(phone) {
+            height: 103vh;
+        }
     }
 
     &--layout-small {
