@@ -27,7 +27,7 @@ returnBarsArr = (removeMiddle) => {
 }
 
 window.addEventListener('scroll', (e) => {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > 120) {
         nav.style.backgroundColor = c_white;
         nav_logo.style.fill = c_primary;
         returnBarsArr(false).forEach(bar => {
@@ -57,12 +57,12 @@ sidenav_checkbox.addEventListener('change', (e) => {
         });
         returnBarsArr(false)[1].style.backgroundColor = c_transparent;
         nav_logo.style.zIndex = '100';
-        if (window.pageYOffset < 200) {
+        if (window.pageYOffset < 120) {
             nav_logo.style.fill = c_primary;
             nav.style.backgroundColor = c_white;
         }
     } else {
-        if (window.pageYOffset < 200) {
+        if (window.pageYOffset < 120) {
             returnBarsArr(false).forEach(bar => {
                 bar.style.backgroundColor = c_white;
             });
