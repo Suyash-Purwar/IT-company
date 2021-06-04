@@ -52,10 +52,11 @@
 
     &__call-to-action {
         background-color: $color-white;
+        color: $primary-color;
+        border: 2px solid $color-white;
         padding: .6rem 2.1rem;
         border-radius: .4rem;
         margin-left: 1.5rem;
-        color: $primary-color;
         font-size: 1.6rem;
         font-weight: 500;
     }

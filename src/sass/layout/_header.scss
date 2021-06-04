@@ -1,19 +1,16 @@
 .header {
+    background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
     position: relative;
     overflow: hidden;
 
-    &__content-box {
-        height: 100vh;
+    &__content-box-large,
+    &__content-box-small {
         z-index: 2;
         position: relative;
+    }
 
-        @include respond(tab-portrait) {
-            height: 60vh;
-        }
-
-        @include respond(phone) {
-            height: 90vh;
-        }
+    &__content-box-large {
+        height: 100vh;
 
         &--left {
             grid-column: col-start 1 / col-end 7;
@@ -24,6 +21,8 @@
         }
 
         @include respond(tab-portrait) {
+            height: 60vh;
+
             &--left {
                 grid-column: col-start 1 / col-end 6;
             }
@@ -39,15 +38,51 @@
                 text-align: center;
             }
 
-            &--right {
-                display: none;
-            }
+            &--right { display: none }
         }
         
         @include respond(phone) {
+            height: 90vh;
+
             &--left {
                 grid-column: col-start 1 / -1;
             }
+        }
+    }
+
+    &__content-box-small {
+        height: 74vh;
+
+        @include respond(phone) {
+            height: 90vh;
+        }
+    }
+
+    &--layout-large {
+        height: 127vh;
+
+        @include respond(tab-landscape) {
+            height: 122vh;
+        }
+
+        @media (max-width: 68.75em) {
+            height: 120vh;
+        }
+
+        @include respond(tab-portrait) {
+            height: 70vh;
+        }
+
+        @include respond(phone) {
+            height: 103vh;
+        }
+    }
+
+    &--layout-small {
+        height: 88vh;
+
+        @include respond(phone) {
+            height: 103vh;
         }
     }
 
@@ -64,6 +99,8 @@
             transform: translateX(-3rem);
         }
     }
+
+    // For waves and background circles
 
     &__waves {
         position: absolute;
@@ -93,30 +130,5 @@
             width: 160%;
             left: -23%;
         }
-    }
-
-    &--layout-large {
-        background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
-        height: 127vh;
-
-        @include respond(tab-landscape) {
-            height: 122vh;
-        }
-
-        @media (max-width: 68.75em) {
-            height: 120vh;
-        }
-
-        @include respond(tab-portrait) {
-            height: 70vh;
-        }
-
-        @include respond(phone) {
-            height: 103vh;
-        }
-    }
-
-    &--layout-small {
-
     }
 }

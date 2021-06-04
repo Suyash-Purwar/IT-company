@@ -43,7 +43,7 @@ window.addEventListener('scroll', (e) => {
         returnBarsArr(false).forEach(bar => {
             bar.style.backgroundColor = c_white;
         });
-        nav_cta.style.border = 'none';
+        nav_cta.style.border = `2px solid ${c_white}`;
         nav_items.forEach(item => {
             item.style.color = c_white;
         });

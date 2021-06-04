@@ -9,13 +9,13 @@
 
 .header {
     &__title {
-        font-weight: 800;
         color: $color-white;
         line-height: 1;
         letter-spacing: 1px;
         text-transform: uppercase;
     
         &--small {
+            font-weight: 800;
             font-size: 4.7rem;
 
             @include respond(tab-landscape) {
@@ -57,7 +57,12 @@
         }
 
         &--big {
-            font-size: 7rem;
+            font-size: 5.5rem;
+            font-weight: 700;
+
+            @include respond(phone) {
+                font-size: 5rem;
+            }
         }   
     }
 
@@ -69,6 +74,15 @@
         @include respond(tab-portrait-s) {
             width: 90%;
             margin: 0 auto;
+        }
+
+        &--small-width {
+            margin: 0 auto;
+            width: 75%;
+
+            @include respond(phone) {
+                width: 100%;
+            }
         }
     }
 }
