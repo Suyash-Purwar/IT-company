@@ -60,6 +60,10 @@
             font-size: 5.5rem;
             font-weight: 700;
 
+            @include respond(tab-portrait) {
+                font-size: 6rem;
+            }
+
             @include respond(phone) {
                 font-size: 5rem;
             }
