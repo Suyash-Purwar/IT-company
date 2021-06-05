@@ -4,6 +4,16 @@
     padding-left: 1rem;
     width: 100%;
 
+    @include respond(tab-portrait) {
+        padding: 0;
+        bottom: 5rem;
+    }
+
+    @include respond(tab-portrait-s) {
+        position: static;
+        margin-top: 2.5rem;
+    }
+
     &__container {
         height: 4.8rem;
         display: inline-flex;
@@ -11,6 +21,11 @@
         background-color: $color-white;
         padding: 0 1.8rem;
         border-radius: 50px;
+
+        @include respond(tab-portrait) {
+            background-color: transparent;
+            padding: 0;
+        }
     }
 
     &__item {
@@ -32,6 +47,35 @@
         a {
             display: flex;
             align-items: center;
+        }
+
+        @include respond(tab-portrait) {
+            svg {
+                width: 3.6rem;
+                fill: $color-white;
+            }
+        }
+
+        @include respond(phone) {
+            svg {
+                width: 3.6rem;
+            }
+        }
+    }
+
+    &__desktop-to-tab-port {
+        display: block;
+
+        @include respond(tab-portrait) {
+            display: none;
+        }
+    }
+
+    &__tab-port-to-phone {
+        display: none;
+
+        @include respond(tab-portrait) {
+            display: block;
         }
     }
 }
