@@ -2,6 +2,10 @@
     padding: 2.5rem 0;
     width: 100%;
 
+    @include respond(phone) {
+        padding: .7rem 0;
+    }
+
     &__container {
         height: 4.8rem;
         display: inline-flex;
@@ -12,7 +16,11 @@
 
         @include respond(tab-portrait) {
             background-color: transparent;
-            padding: 0;
+        }
+
+        @include respond(phone) {
+            display: flex;
+            justify-content: center;
         }
     }
 
@@ -46,7 +54,7 @@
 
         @include respond(phone) {
             svg {
-                width: 3.6rem;
+                width: 3.2rem;
             }
         }
     }
