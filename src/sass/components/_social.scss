@@ -1,17 +1,11 @@
 .social {
-    position: absolute;
-    bottom: 2.5rem;
-    padding-left: 1rem;
+    grid-row: 2 / 3;
+    grid-column: col-start 1 / col-end 12;
+    padding: 2.5rem 0;
     width: 100%;
 
-    @include respond(tab-portrait) {
-        padding: 0;
-        bottom: 5rem;
-    }
-
-    @include respond(tab-portrait-s) {
-        position: static;
-        margin-top: 2.5rem;
+    @include respond(phone) {
+        padding: .7rem 0;
     }
 
     &__container {
@@ -24,7 +18,11 @@
 
         @include respond(tab-portrait) {
             background-color: transparent;
-            padding: 0;
+        }
+
+        @include respond(phone) {
+            display: flex;
+            justify-content: center;
         }
     }
 
@@ -58,7 +56,7 @@
 
         @include respond(phone) {
             svg {
-                width: 3.6rem;
+                width: 3.2rem;
             }
         }
     }
