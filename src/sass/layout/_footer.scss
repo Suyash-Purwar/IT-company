@@ -1,0 +1,90 @@
+.footer {
+    background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+    position: relative;
+
+    &__content-box {
+        grid-column-gap: 4rem;
+        grid-row-gap: 0;
+    }
+
+    &__logo {
+        svg {
+            width: 50%;
+            fill: $color-white;
+        }
+    }
+
+    &__list {
+        margin-top: 2.2rem;
+        list-style-type: none;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: .5rem;
+    }
+
+    &__part {
+        padding: 2rem 0;
+
+        &--1 {
+            
+        }
+
+        &--2 {
+
+        }
+
+        &--3 {
+
+        }
+
+        &--4 {
+
+        }
+    }
+
+    &__contact-list {
+        margin-top: 2.2rem;
+        list-style-type: none;
+    }
+
+    &__contact-details {
+        margin-bottom: .6rem;
+
+        p {
+            font-weight: 500;
+        }
+    }
+
+    &__social-media-box {
+        margin-top: .9rem;
+        display: inline-flex;
+    }
+
+    &__social-m-item {
+        transition: all .1s;
+
+        &:not(:last-child) {
+            margin-right: 1.1rem;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        svg {
+            fill: $color-white;
+            width: 2.5rem;
+        }
+
+        a {
+            display: inline-block;
+        }
+    }
+
+    &__copywrite {
+        text-align: center;
+        padding: 1rem 0;
+        grid-column: col-start 1 / col-end 12;
+    }
+}
