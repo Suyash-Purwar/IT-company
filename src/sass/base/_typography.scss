@@ -91,3 +91,12 @@
         }
     }
 }
+
+.footer {
+    &__heading {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $color-white;
+    }
+}
