@@ -23,11 +23,6 @@
             grid-row: 1 / 3;
         }
 
-        .social {
-            grid-row: 2 / 3;
-            grid-column: col-start 1 / col-end 12;
-        }
-
         @include respond(tab-portrait) {
             height: 60vh;
 
