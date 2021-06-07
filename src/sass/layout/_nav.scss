@@ -59,6 +59,13 @@
         margin-left: 1.5rem;
         font-size: 1.6rem;
         font-weight: 500;
+        transition: all .3s;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $color-white;
+            border-color: $primary-color !important;
+        }
     }
 }
 

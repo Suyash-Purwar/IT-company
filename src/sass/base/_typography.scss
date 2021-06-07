@@ -98,9 +98,10 @@
 
 .footer {
     &__heading {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
         color: $color-white;
+        letter-spacing: 1px;
     }
 }

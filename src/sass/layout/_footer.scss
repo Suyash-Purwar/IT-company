@@ -34,10 +34,14 @@
         @include respond(tab-portrait-s) {
             margin-bottom: .8rem;
         }
+
+        @include respond(phone) {
+            margin-bottom: 0;
+        }
     }
 
     &__list, &__contact-list {
-        margin-top: 2.2rem;
+        margin-top: 2.5rem;
         list-style-type: none;
 
         @include respond(tab-portrait-s) {
@@ -144,12 +148,7 @@
     }
 
     &__copywrite {
-        text-align: center;
         padding-bottom: 1rem;
         grid-column: col-start 1 / col-end 12;
-
-        @media (max-width: 31.25em) {
-            grid-row: 5 / 6;
-        }
     }
 }

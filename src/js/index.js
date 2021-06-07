@@ -29,6 +29,7 @@ returnBarsArr = (removeMiddle) => {
 window.addEventListener('scroll', (e) => {
     if (window.pageYOffset > 120) {
         nav.style.backgroundColor = c_white;
+        nav.style.boxShadow = '0 .5rem 1.5rem rgba(0,0,0,0.2)';
         nav_logo.style.fill = c_primary;
         returnBarsArr(false).forEach(bar => {
             bar.style.backgroundColor = c_grey;
@@ -39,6 +40,7 @@ window.addEventListener('scroll', (e) => {
         });
     } else {
         nav.style.backgroundColor = c_transparent;
+        nav.style.boxShadow = 'none';
         nav_logo.style.fill = c_white;
         returnBarsArr(false).forEach(bar => {
             bar.style.backgroundColor = c_white;
