@@ -3,20 +3,52 @@
     position: relative;
 
     &__content-box {
+        padding-top: 3rem;
         grid-column-gap: 4rem;
-        grid-row-gap: 0;
-    }
+        grid-row-gap: 2rem;
 
-    &__logo {
-        svg {
-            width: 50%;
-            fill: $color-white;
+        @include respond(tab-portrait-s) {
+            padding: 3rem 4rem 0 4rem;
+            grid-column-gap: 3rem;
+        }
+    
+        @media (max-width: 40.62em) {
+            padding: 3rem 2rem 0 2rem;
+        }
+
+        @include respond(phone) {
+            padding: 4rem 1.5rem 0 1.5rem;
+            grid-column-gap: 3rem;
+            grid-row-gap: 4rem;
         }
     }
 
-    &__list {
+    &__logo {
+        margin-bottom: 1.5rem;
+        
+        svg {
+            height: 3.4rem;
+            fill: $color-white;
+        }
+
+        @include respond(tab-portrait-s) {
+            margin-bottom: .8rem;
+        }
+    }
+
+    &__list, &__contact-list {
         margin-top: 2.2rem;
         list-style-type: none;
+
+        @include respond(tab-portrait-s) {
+            margin-top: 1.1rem;
+        }
+    }
+
+    &__insights {
+        @media (max-width: 31.25em) {
+            column-count: 2;
+        }
     }
 
     &__item:not(:last-child) {
@@ -24,28 +56,57 @@
     }
 
     &__part {
-        padding: 2rem 0;
-
         &--1 {
-            
+            @include respond(tab-portrait-s) {
+                grid-row: 2 / 3;
+                grid-column: col-start 1 / col-end 7
+            }
         }
 
-        &--2 {
+        &--2,
+        &--3,
+        &--4 {
+            @include respond(tab-portrait-s) {
+                grid-column: span 4;   
+            }
+        }
 
+        &--1,
+        &--2 {
+            @include respond(phone) {
+                grid-column: span 6;
+            }
         }
 
         &--3 {
-
+            @include respond(phone) {
+                grid-column: col-start 1 / col-end 6;
+                grid-row: 1 / 2;
+            }
         }
 
-        &--4 {
+        @media (max-width: 31.25em) {
+            &--1 {
+                grid-row: 4 / 5;
+                grid-column: col-start 1 / -1;
+            }
 
+            &--2 {
+                grid-row: 2 / 3;
+                grid-column: 1 / -1;
+
+            }
+
+            &--4 {
+                grid-row: 3 / 4;
+                grid-column: 1 / -1;
+            }
+
+            &--3 {
+                grid-row: 1 / 2;
+                grid-column: col-start 1 / col-end 12;
+            }
         }
-    }
-
-    &__contact-list {
-        margin-top: 2.2rem;
-        list-style-type: none;
     }
 
     &__contact-details {
@@ -84,7 +145,11 @@
 
     &__copywrite {
         text-align: center;
-        padding: 1rem 0;
+        padding-bottom: 1rem;
         grid-column: col-start 1 / col-end 12;
+
+        @media (max-width: 31.25em) {
+            grid-row: 5 / 6;
+        }
     }
 }

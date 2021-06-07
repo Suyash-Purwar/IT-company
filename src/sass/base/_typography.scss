@@ -5,6 +5,10 @@
         color: $color-white;
         font-weight: 400;
     }
+
+    @include respond(phone) {
+        font-size: 1.8rem;
+    }
 }
 
 .header {
