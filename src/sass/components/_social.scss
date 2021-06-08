@@ -4,8 +4,8 @@
     padding: 2.5rem 0;
     width: 100%;
 
-    @include respond(phone) {
-        padding: .7rem 0;
+    @include respond(tab-portrait-s) {
+        padding: 3rem 0;
     }
 
     &__container {
@@ -21,7 +21,7 @@
             padding: 0;
         }
 
-        @include respond(phone) {
+        @include respond(tab-portrait-s) {
             display: flex;
             justify-content: center;
         }

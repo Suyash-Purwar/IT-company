@@ -25,19 +25,15 @@
 
         @include respond(tab-portrait) {
             height: 60vh;
-
-            &--left {
-                grid-column: col-start 1 / col-end 7;
-            }
-
-            &--right {
-                grid-column: col-start 8 / -1;
-            }
         }
 
         @include respond(tab-portrait-s) {
+            grid-template-rows: repeat(2, min-content);
+            align-content: center;
+
             &--left {
                 grid-column: col-start 2 / col-end 11;
+                grid-row: 1 / 2;
                 text-align: center;
             }
 
@@ -46,16 +42,10 @@
         
         @include respond(phone) {
             height: 90vh;
-            grid-template-rows: repeat(2, min-content);
-            align-content: center;
+
 
             &--left {
                 grid-column: col-start 1 / -1;
-            }
-
-            &--left,
-            &--right {
-                grid-row: 1 / 2;
             }
         }
     }
