@@ -24,7 +24,13 @@
         }
 
         @include respond(tab-portrait) {
-            height: 60vh;
+            height: initial;
+            padding: 14rem 0 8rem 0;
+
+            &--left,
+            &--right {
+                grid-row: 1 / 2;
+            }
         }
 
         @include respond(tab-portrait-s) {
@@ -33,7 +39,6 @@
 
             &--left {
                 grid-column: col-start 2 / col-end 11;
-                grid-row: 1 / 2;
                 text-align: center;
             }
 
@@ -42,7 +47,7 @@
         
         @include respond(phone) {
             height: 90vh;
-
+            padding: 0;
 
             &--left {
                 grid-column: col-start 1 / -1;
@@ -51,39 +56,7 @@
     }
 
     &__content-box-small {
-        height: 74vh;
-
-        @include respond(phone) {
-            height: 82vh;
-        }
-    }
-
-    &--layout-large {
-        height: 127vh;
-
-        @include respond(tab-landscape) {
-            height: 122vh;
-        }
-
-        @media (max-width: 68.75em) {
-            height: 120vh;
-        }
-
-        @include respond(tab-portrait) {
-            height: 70vh;
-        }
-
-        @include respond(phone) {
-            height: 103vh;
-        }
-    }
-
-    &--layout-small {
-        height: 88vh;
-
-        @include respond(phone) {
-            height: 85vh;
-        }
+        padding: 18rem 0 13rem 0;
     }
 
     &__title {
@@ -134,8 +107,8 @@
     // For waves and background circles
 
     &__waves {
-        position: absolute;
-        bottom: -1px;
+        position: relative;
+        top: 2rem;
     }
 
     &__circle {

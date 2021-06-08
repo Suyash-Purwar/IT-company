@@ -85,11 +85,6 @@
                 margin: 0 auto;
             }
 
-            @include respond(phone) {
-                width: 80%;
-                font-size: 4.7rem;
-            }
-
             @media (max-width: 31.25em) {
                 width: 100%;
                 font-size: 4.3rem;
@@ -104,7 +99,7 @@
                 font-size: 6rem;
             }
 
-            @include respond(phone) {
+            @media (max-width: 31.25em) {
                 font-size: 5rem;
             }
         }   
@@ -126,7 +121,7 @@
             width: 75%;
 
             @include respond(phone) {
-                width: 100%;
+                width: 90%;
             }
         }
     }

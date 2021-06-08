@@ -1,11 +1,15 @@
 .social {
     grid-row: 2 / 3;
     grid-column: col-start 1 / col-end 12;
-    padding: 2.5rem 0;
     width: 100%;
+    padding-bottom: 2rem;
+
+    @include respond(tab-portrait) {
+        padding: 2rem 0 0 0;
+    }
 
     @include respond(tab-portrait-s) {
-        padding: 3rem 0;
+        padding-top: 3rem;
     }
 
     &__container {
@@ -22,6 +26,7 @@
         }
 
         @include respond(tab-portrait-s) {
+            transform: translateY(0);
             display: flex;
             justify-content: center;
         }
