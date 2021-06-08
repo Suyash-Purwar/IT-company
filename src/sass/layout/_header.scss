@@ -129,7 +129,7 @@
             left: -5%;
         }
 
-        @media (max-width: 31.25em) {
+        @include respond(phone-s) {
             top: 10%;
             width: 160%;
             left: -23%;

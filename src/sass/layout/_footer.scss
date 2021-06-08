@@ -50,7 +50,7 @@
     }
 
     &__insights {
-        @media (max-width: 31.25em) {
+        @include respond(phone-s) {
             column-count: 2;
         }
     }
@@ -89,7 +89,7 @@
             }
         }
 
-        @media (max-width: 31.25em) {
+        @include respond(phone-s) {
             &--1 {
                 grid-row: 4 / 5;
                 grid-column: col-start 1 / -1;

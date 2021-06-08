@@ -62,7 +62,7 @@
                 width: 100%;
             }
     
-            @media (max-width: 31.25em) {
+            @include respond(phone-s) {
                 font-size: 4rem;
     
                 .header__title-top {
@@ -85,7 +85,7 @@
                 margin: 0 auto;
             }
 
-            @media (max-width: 31.25em) {
+            @include respond(phone-s) {
                 width: 100%;
                 font-size: 4.3rem;
             }
@@ -99,7 +99,7 @@
                 font-size: 6rem;
             }
 
-            @media (max-width: 31.25em) {
+            @include respond(phone-s) {
                 font-size: 5rem;
             }
         }   
