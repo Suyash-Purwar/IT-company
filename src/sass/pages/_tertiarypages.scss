@@ -1,0 +1,13 @@
+.tertiary-content {
+    padding: 0 1rem;
+
+    &__container {
+        &:not(:first-child) {
+            padding-top: 4rem;
+        }   
+
+        p:not(:first-child) {
+            margin-top: .7rem;
+        }
+    }
+}

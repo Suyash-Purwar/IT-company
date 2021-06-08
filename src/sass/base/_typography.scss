@@ -6,9 +6,20 @@
         font-weight: 400;
     }
 
+    &--column-2 {
+        column-count: 2;
+        column-rule: 1px solid #ccc;
+        column-gap: 5rem;
+    }
+
     @include respond(phone) {
         font-size: 1.8rem;
     }
+}
+
+.heading-secondary {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 .header {
