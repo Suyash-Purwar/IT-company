@@ -71,6 +71,31 @@
             }
         }
 
+        &--medium {
+            font-size: 5rem;
+            font-weight: 700;
+
+            @include respond(tab-portrait) {
+                font-size: 4.5rem;
+            }
+
+            @include respond(tab-portrait-s) {
+                font-size: 5.5rem;
+                width: 75%;
+                margin: 0 auto;
+            }
+
+            @include respond(phone) {
+                width: 80%;
+                font-size: 4.7rem;
+            }
+
+            @media (max-width: 31.25em) {
+                width: 100%;
+                font-size: 4.3rem;
+            }
+        }
+
         &--big {
             font-size: 5.5rem;
             font-weight: 700;
