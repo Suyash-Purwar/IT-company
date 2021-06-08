@@ -11,7 +11,7 @@
     @include respond(tab-portrait-s) {
         padding-top: 3rem;
     }
-
+    
     &__container {
         height: 4.8rem;
         display: inline-flex;
@@ -29,6 +29,10 @@
             transform: translateY(0);
             display: flex;
             justify-content: center;
+        }
+
+        @include respond(phone-s) {
+            justify-content: start;
         }
     }
 
@@ -64,22 +68,6 @@
             svg {
                 width: 3.2rem;
             }
-        }
-    }
-
-    &__desktop-to-tab-port {
-        display: block;
-
-        @include respond(tab-portrait) {
-            display: none;
-        }
-    }
-
-    &__tab-port-to-phone {
-        display: none;
-
-        @include respond(tab-portrait) {
-            display: block;
         }
     }
 }

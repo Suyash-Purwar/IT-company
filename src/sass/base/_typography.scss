@@ -26,7 +26,6 @@
     &__title {
         color: $color-white;
         line-height: 1;
-        letter-spacing: 2px;
         text-transform: uppercase;
     
         &--small {
@@ -63,10 +62,16 @@
             }
     
             @include respond(phone-s) {
-                font-size: 4rem;
+                width: 90%;
+                margin: 0;
+                font-size: 3.9rem;
+                font-weight: 800;
+                text-align: left;
     
                 .header__title-top {
-                    font-size: 2rem;
+                    font-size: 1.9rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
                 }
             }
         }
@@ -86,8 +91,11 @@
             }
 
             @include respond(phone-s) {
-                width: 100%;
-                font-size: 4.3rem;
+                width: 90%;
+                margin: 0;
+                font-size: 4rem;
+                font-weight: 800;
+                text-align: left;
             }
         }
 
@@ -114,6 +122,13 @@
         @include respond(tab-portrait-s) {
             width: 90%;
             margin: 0 auto;
+        }
+
+        @include respond(phone-s) {
+            margin: 0;
+            text-align: left;
+            margin-top: 4rem;
+            width: 95%;
         }
 
         &--small-width {

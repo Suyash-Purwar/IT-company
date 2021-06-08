@@ -1,15 +1,16 @@
 .home-header {
     &__img {
+        margin: 0 auto;
+        display: block;
         width: 115%;
-        transform: translate(-4rem, 2.3rem);
 
-        @media (max-width: 68.75em) {
+        @media (max-width: 68.75em) { // 1100px
             transform: translate(-4.5rem, 2.3rem);
         }
 
         @include respond(tab-portrait) {
-            width: 110%;
-            transform: translateX(-3rem);
+            width: 120%;
+            transform: translate(-6.5rem, 2rem);
         }
     }
 
@@ -18,7 +19,7 @@
             padding: 0;
 
             &__container {
-                transform: translateY(-4rem);
+                transform: translateY(-5.5rem);
             }
         }
 
@@ -28,6 +29,10 @@
             &__container {
                 transform: translateY(0);
             }
+        }
+
+        @include respond(phone-s) {
+            padding-top: 1.5rem;
         }
     }
 }

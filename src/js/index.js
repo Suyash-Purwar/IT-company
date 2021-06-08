@@ -27,7 +27,7 @@ returnBarsArr = (removeMiddle) => {
 }
 
 window.addEventListener('scroll', (e) => {
-    if (window.pageYOffset > 120) {
+    if (window.pageYOffset > 110) {
         nav.style.backgroundColor = c_white;
         nav.style.boxShadow = '0 .5rem 1.5rem rgba(0,0,0,0.2)';
         nav_logo.style.fill = c_primary;
@@ -59,12 +59,12 @@ sidenav_checkbox.addEventListener('change', (e) => {
         });
         returnBarsArr(false)[1].style.backgroundColor = c_transparent;
         nav_logo.style.zIndex = '100';
-        if (window.pageYOffset < 120) {
+        if (window.pageYOffset < 110) {
             nav_logo.style.fill = c_primary;
             nav.style.backgroundColor = c_white;
         }
     } else {
-        if (window.pageYOffset < 120) {
+        if (window.pageYOffset < 110) {
             returnBarsArr(false).forEach(bar => {
                 bar.style.backgroundColor = c_white;
             });

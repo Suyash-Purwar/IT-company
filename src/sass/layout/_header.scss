@@ -48,15 +48,30 @@
         @include respond(phone) {
             height: 90vh;
             padding: 0;
+            transform: translateY(2vh);
 
             &--left {
                 grid-column: col-start 1 / -1;
             }
         }
+
+        @include respond(phone-s) {
+            padding: 0 2rem;
+        }
     }
 
     &__content-box-small {
         padding: 18rem 0 13rem 0;
+    }
+
+    .button-container {
+        margin-top: 6rem;
+
+        @include respond(phone-s) {
+            width: 100%;
+            margin-top: 9rem;
+            text-align: left;
+        }
     }
 
     &__title {
@@ -67,6 +82,8 @@
         }
     }
 
+    // These block will be overrided by
+    // -> _home.scss
     &__img {
         width: 100%;
         display: block;
