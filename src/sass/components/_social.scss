@@ -5,11 +5,15 @@
     padding-bottom: 2rem;
 
     @include respond(tab-portrait) {
-        padding: 2rem 0 0 0;
+        padding: 2rem 0 0 0; // Applies to every page except home page
     }
 
     @include respond(tab-portrait-s) {
         padding-top: 3rem;
+    }
+
+    @include respond(phone) {
+        padding-top: 1.5rem;
     }
     
     &__container {

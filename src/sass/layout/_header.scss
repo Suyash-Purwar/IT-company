@@ -25,7 +25,7 @@
 
         @include respond(tab-portrait) {
             height: initial;
-            padding: 14rem 0 8rem 0;
+            padding: 13rem 0 9rem 0;
 
             &--left,
             &--right {
@@ -35,8 +35,8 @@
 
         @include respond(tab-portrait-s) {
             grid-template-rows: repeat(2, min-content);
-            align-content: center;
-
+            padding: 15rem 0 9rem 0;
+            
             &--left {
                 grid-column: col-start 2 / col-end 11;
                 text-align: center;
@@ -46,9 +46,10 @@
         }
         
         @include respond(phone) {
-            height: 90vh;
+            height: 95vh;
             padding: 0;
-            transform: translateY(2vh);
+            align-content: center;
+            transform: translateY(2.5vh);
 
             &--left {
                 grid-column: col-start 1 / -1;
@@ -70,6 +71,7 @@
         @include respond(phone-s) {
             width: 100%;
             margin-top: 9rem;
+
             text-align: left;
         }
     }

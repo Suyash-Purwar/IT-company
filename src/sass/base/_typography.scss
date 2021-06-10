@@ -24,8 +24,9 @@
 
 .header {
     &__title {
+        letter-spacing: 1px;
         color: $color-white;
-        line-height: 1;
+        line-height: 1.0;
         text-transform: uppercase;
     
         &--small {
@@ -57,22 +58,22 @@
                 }
             }
     
-            @include respond(phone) {
-                width: 100%;
-            }
-    
             @include respond(phone-s) {
-                width: 90%;
                 margin: 0;
-                font-size: 3.9rem;
+                font-size: 4.5rem;
                 font-weight: 800;
                 text-align: left;
+                width: 100%;
     
                 .header__title-top {
-                    font-size: 1.9rem;
+                    font-size: 2rem;
                     font-weight: 500;
                     margin-bottom: 1rem;
                 }
+            }
+
+            @media (max-width: 25.9em) {
+                font-size: 4.1rem;
             }
         }
 
@@ -91,11 +92,15 @@
             }
 
             @include respond(phone-s) {
-                width: 90%;
+                width: 100%;
                 margin: 0;
-                font-size: 4rem;
+                font-size: 5rem;
                 font-weight: 800;
                 text-align: left;
+            }
+
+            @media (max-width: 25.9em) {
+                font-size: 4.5rem;
             }
         }
 
@@ -128,7 +133,7 @@
             margin: 0;
             text-align: left;
             margin-top: 4rem;
-            width: 95%;
+            width: 100%;
         }
 
         &--small-width {
