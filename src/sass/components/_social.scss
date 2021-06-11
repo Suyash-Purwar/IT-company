@@ -9,10 +9,6 @@
     }
 
     @include respond(tab-portrait-s) {
-        padding-top: 3rem;
-    }
-
-    @include respond(phone) {
         padding-top: 1.5rem;
     }
     
