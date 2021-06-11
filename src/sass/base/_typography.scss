@@ -24,9 +24,9 @@
 
 .header {
     &__title {
+        letter-spacing: 1px;
         color: $color-white;
-        line-height: 1;
-        letter-spacing: 2px;
+        line-height: 1.0;
         text-transform: uppercase;
     
         &--small {
@@ -58,16 +58,22 @@
                 }
             }
     
-            @include respond(phone) {
+            @include respond(phone-s) {
+                margin: 0;
+                font-size: 4.5rem;
+                font-weight: 800;
+                text-align: left;
                 width: 100%;
-            }
-    
-            @media (max-width: 31.25em) {
-                font-size: 4rem;
     
                 .header__title-top {
                     font-size: 2rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
                 }
+            }
+
+            @media (max-width: 25.9em) {
+                font-size: 4.1rem;
             }
         }
 
@@ -85,13 +91,15 @@
                 margin: 0 auto;
             }
 
-            @include respond(phone) {
-                width: 80%;
-                font-size: 4.7rem;
+            @include respond(phone-s) {
+                width: 100%;
+                margin: 0;
+                font-size: 5rem;
+                font-weight: 800;
+                text-align: left;
             }
 
-            @media (max-width: 31.25em) {
-                width: 100%;
+            @media (max-width: 25.9em) {
                 font-size: 4.3rem;
             }
         }
@@ -104,7 +112,7 @@
                 font-size: 6rem;
             }
 
-            @include respond(phone) {
+            @include respond(phone-s) {
                 font-size: 5rem;
             }
         }   
@@ -121,12 +129,19 @@
             margin: 0 auto;
         }
 
+        @include respond(phone-s) {
+            margin: 0;
+            text-align: left;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
         &--small-width {
             margin: 0 auto;
             width: 75%;
 
             @include respond(phone) {
-                width: 100%;
+                width: 90%;
             }
         }
     }

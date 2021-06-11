@@ -10,4 +10,8 @@
             margin-top: .7rem;
         }
     }
+
+    @include respond(phone) {
+        padding: 3rem 1rem;
+    }
 }

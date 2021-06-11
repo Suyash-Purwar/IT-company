@@ -1,13 +1,21 @@
 .social {
     grid-row: 2 / 3;
     grid-column: col-start 1 / col-end 12;
-    padding: 2.5rem 0;
     width: 100%;
+    padding-bottom: 2rem;
 
-    @include respond(phone) {
-        padding: .7rem 0;
+    @include respond(tab-portrait) {
+        padding: 2rem 0 0 0;
     }
 
+    @include respond(tab-portrait-s) {
+        padding-top: 3rem;
+    }
+
+    @include respond(phone) {
+        padding-top: 1.5rem;
+    }
+    
     &__container {
         height: 4.8rem;
         display: inline-flex;
@@ -21,9 +29,14 @@
             padding: 0;
         }
 
-        @include respond(phone) {
+        @include respond(tab-portrait-s) {
+            transform: translateY(0);
             display: flex;
             justify-content: center;
+        }
+
+        @include respond(phone-s) {
+            justify-content: start;
         }
     }
 
@@ -59,22 +72,6 @@
             svg {
                 width: 3.2rem;
             }
-        }
-    }
-
-    &__desktop-to-tab-port {
-        display: block;
-
-        @include respond(tab-portrait) {
-            display: none;
-        }
-    }
-
-    &__tab-port-to-phone {
-        display: none;
-
-        @include respond(tab-portrait) {
-            display: block;
         }
     }
 }

@@ -19,23 +19,25 @@
         }
 
         &--right {
+            position: relative;
             grid-column: col-start 8 / -1;
             grid-row: 1 / 3;
+            height: 100%;
         }
 
         @include respond(tab-portrait) {
-            height: 60vh;
+            height: initial;
+            padding: 13rem 0 9rem 0;
 
             &--left {
-                grid-column: col-start 1 / col-end 7;
-            }
-
-            &--right {
-                grid-column: col-start 8 / -1;
+                grid-row: 1 / 2;
             }
         }
 
         @include respond(tab-portrait-s) {
+            grid-template-rows: repeat(2, min-content);
+            padding: 15rem 0 9rem 0;
+            
             &--left {
                 grid-column: col-start 2 / col-end 11;
                 text-align: center;
@@ -45,54 +47,33 @@
         }
         
         @include respond(phone) {
-            height: 90vh;
-            grid-template-rows: repeat(2, min-content);
+            height: 95vh;
+            padding: 0;
             align-content: center;
+            transform: translateY(2.5vh);
 
             &--left {
                 grid-column: col-start 1 / -1;
             }
+        }
 
-            &--left,
-            &--right {
-                grid-row: 1 / 2;
-            }
+        @include respond(phone-s) {
+            padding: 0 2rem;
         }
     }
 
     &__content-box-small {
-        height: 74vh;
-
-        @include respond(phone) {
-            height: 82vh;
-        }
+        padding: 18rem 0 13rem 0;
     }
 
-    &--layout-large {
-        height: 127vh;
+    .button-container {
+        margin-top: 6rem;
 
-        @include respond(tab-landscape) {
-            height: 122vh;
-        }
+        @include respond(phone-s) {
+            width: 100%;
+            margin-top: 9rem;
 
-        @media (max-width: 68.75em) {
-            height: 120vh;
-        }
-
-        @include respond(tab-portrait) {
-            height: 70vh;
-        }
-
-        @include respond(phone) {
-            height: 103vh;
-        }
-    }
-
-    &--layout-small {
-        height: 88vh;
-
-        @include respond(phone) {
-            height: 85vh;
+            text-align: left;
         }
     }
 
@@ -106,8 +87,7 @@
 
     &__img {
         width: 100%;
-        display: block;
-        margin: 0 auto;
+        @include absCenterY;
     }
 
     &__page-location {
@@ -144,8 +124,8 @@
     // For waves and background circles
 
     &__waves {
-        position: absolute;
-        bottom: -1px;
+        position: relative;
+        top: 2rem;
     }
 
     &__circle {
@@ -166,7 +146,7 @@
             left: -5%;
         }
 
-        @media (max-width: 31.25em) {
+        @include respond(phone-s) {
             top: 10%;
             width: 160%;
             left: -23%;
