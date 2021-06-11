@@ -5,7 +5,7 @@
     padding-bottom: 2rem;
 
     @include respond(tab-portrait) {
-        padding: 2rem 0 0 0; // Applies to every page except home page
+        padding: 2rem 0 0 0;
     }
 
     @include respond(tab-portrait-s) {
