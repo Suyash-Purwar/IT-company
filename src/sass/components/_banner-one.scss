@@ -1,6 +1,10 @@
 .bannerone {
     background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
 
+    .heading-secondary {
+        margin-bottom: 2rem;
+    }
+
     &__content-box {
         position: relative;
         z-index: 2;

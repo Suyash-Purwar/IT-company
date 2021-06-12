@@ -1,5 +1,14 @@
 .paragraph {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #444;
+
+    &--small {
+        font-weight: 300;
+        font-size: 1.3rem;
+        text-align: center;
+        line-height: 1.7;
+    }
 
     &--white {
         color: $color-white;
@@ -15,11 +24,6 @@
     @include respond(phone) {
         font-size: 1.8rem;
     }
-}
-
-.heading-secondary {
-    font-size: 2.5rem;
-    font-weight: 700;
 }
 
 .header {
@@ -147,6 +151,14 @@
     }
 }
 
+.heading-primary {
+    font-size: 3.3rem;
+    color: $primary-color;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
 .heading-secondary {
     line-height: 1.1;
     font-size: 2.6rem;
@@ -161,6 +173,15 @@
 
     &--blue {
         color: $primary-color;
+    }
+}
+
+.intro-section {
+    &__card-heading {
+        color: rgba($color-black, .8);
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
     }
 }
 

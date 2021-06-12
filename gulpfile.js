@@ -48,7 +48,7 @@ const watchTask = () => {
     watch('src/**/*.html', series(sendHtml, browsersyncReload));
     watch('src/sass/**/*.scss', series(compileSass, browsersyncReload));
     watch('src/js/*.js', series(jsmin, browsersyncReload));
-    watch('src/assets/**/*', series(sendAssets, browsersyncReload));
+    watch('src/assets/**/*.{svg, png}', series(sendAssets, browsersyncReload));
 }
 
 exports.default = series(
