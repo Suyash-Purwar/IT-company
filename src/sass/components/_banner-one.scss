@@ -1,0 +1,138 @@
+.bannerone {
+    background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+
+    &__content-box {
+        position: relative;
+        z-index: 2;
+        transform: translateY(3.5vw);
+
+        @media (max-width: 87.5em) {  // 1400px
+            transform: translateY(2vw);
+        }
+
+        @media (max-width: 64rem) {  // 1024px
+            padding: 1.5rem 1rem;
+        }
+
+        @media (max-width: 68.75em) {   // 1100px
+            transform: translateY(0);
+        }
+
+        @include respond(tab-portrait) {
+            transform: translateY(1vw);
+        }
+
+
+        @media (max-width: 46.8em) {  // 750px
+            padding: 2rem 1rem;
+            transform: translateY(0);
+        }
+
+        @include respond(phone) {
+            padding: 7rem 1rem;
+            grid-row-gap: 5rem
+        }
+    }
+
+    &__left {
+        grid-column: col-start 1 / col-end 6;
+        
+        .button-secondary {
+            display: none;
+        }
+
+        @media (max-width: 68.75em) {
+            grid-column: col-start 1 / col-end 7;
+        }
+
+        @include respond(phone) {
+            .button-primary {
+                display: none;
+            }
+
+            .button-secondary {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__right {
+        grid-column: col-start 8 / -1;
+    }
+
+    &__img {
+        position: relative;
+
+        img {
+            @include absCenterY;
+            right: 0;
+            width: 90%;
+            
+            @include respond(tab-portrait) {
+                width: 100%;
+            }
+
+            @include respond(phone) {
+                position: relative;
+                transform: translate(0);
+                width: 50%;
+                display: block;
+                margin: 0 auto;
+            }
+
+            @include respond(phone-s) {
+                width: 75%;
+            }
+        }
+    }
+
+    &__wave-t {
+        position: relative;
+        top: -1px;
+    }
+
+    &__wave-b {
+        position: relative;
+        bottom: -6px;
+    }
+
+    @include respond(phone) {
+        background: $color-white;
+
+        &__wave-t,
+        &__wave-b {
+            display: none;
+        }
+
+        &__right {
+            grid-row: 1 / 2;
+        }
+
+        &__left {
+            text-align: center;
+
+            & > h3 {
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            & > p {
+                margin: 0 auto;
+                width: 85%;
+            }
+        }
+
+        &__left,
+        &__right {
+            grid-column: col-start 1 / -1;
+        }
+    }
+
+    @include respond(phone-s) {
+        &__left {
+            & > p {
+                width: 85%;
+            }
+        }
+    }
+}
