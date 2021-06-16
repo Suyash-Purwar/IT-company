@@ -1,5 +1,53 @@
 .bannerone {
     background: radial-gradient(circle at 20% 40%, #226CE0, #2265D2, #215EC3, #2157B5, #2150A6, #214998, #204389, #203C7B, #20356C, #202E5E, #1F274F, #1F2041);
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 25rem;
+        background-image: url('../assets/svg/bannerone_wave-b.svg');
+        background-size: 100% 25rem;
+
+        margin-top: -8rem;
+
+        @media (max-width: 84.3em) {
+            margin-top: -4rem;
+        }
+
+        @media (max-width: 64em) {
+            height: 18rem;
+            background-size: 100% 18rem;
+            margin-top: -2rem;
+        }
+
+        @include respond(tab-portrait-s) {
+            background-size: 100% 14rem;
+            height: 14rem;
+            margin-top: 0;
+        }
+    }
+
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 9rem;
+        background-image: url('../assets/svg/bannerone_wave-t.svg');
+        background-size: 100% 9rem;
+
+        @media (max-width: 64em) {
+            background-size: 100% 7rem;
+            height: 7rem;
+        }
+
+        @include respond(tab-portrait-s) {
+            background-size: 100% 5rem;
+            height: 5rem;
+        }
+    }
 
     .heading-secondary {
         margin-bottom: 2rem;
@@ -8,133 +56,113 @@
     &__content-box {
         position: relative;
         z-index: 2;
-        transform: translateY(3.5vw);
+        padding: 1rem;
 
-        @media (max-width: 87.5em) {  // 1400px
-            transform: translateY(2vw);
-        }
-
-        @media (max-width: 64rem) {  // 1024px
-            padding: 1.5rem 1rem;
-        }
-
-        @media (max-width: 68.75em) {   // 1100px
-            transform: translateY(0);
-        }
-
-        @include respond(tab-portrait) {
-            transform: translateY(1vw);
-        }
-
-
-        @media (max-width: 46.8em) {  // 750px
+        @include respond(tab-portrait-s) {
             padding: 2rem 1rem;
-            transform: translateY(0);
-        }
-
-        @include respond(phone) {
-            padding: 7rem 1rem;
-            grid-row-gap: 5rem
         }
     }
 
     &__left {
-        grid-column: col-start 1 / col-end 6;
-        
-        .button-secondary {
-            display: none;
-        }
-
-        @media (max-width: 68.75em) {
-            grid-column: col-start 1 / col-end 7;
-        }
-
-        @include respond(phone) {
-            .button-primary {
-                display: none;
-            }
-
-            .button-secondary {
-                display: inline-block;
-            }
-        }
+        grid-column: col-start 1 / col-end 7;
     }
 
     &__right {
-        grid-column: col-start 8 / -1;
+        grid-column: col-start 8 / col-end 12;
+    }
+
+    .button-secondary {
+        display: none;
     }
 
     &__img {
         position: relative;
+        text-align: right;
+        top: -3rem;
+
+        @media (max-width: 64rem) {
+            text-align: center;
+            top: 0rem;
+        }
 
         img {
-            @include absCenterY;
-            right: 0;
-            width: 90%;
-            
-            @include respond(tab-portrait) {
-                width: 100%;
-            }
+            width: 85%;
 
-            @include respond(phone) {
-                position: relative;
-                transform: translate(0);
-                width: 50%;
-                display: block;
-                margin: 0 auto;
-            }
-
-            @include respond(phone-s) {
-                width: 75%;
+            @include respond(tab-portrait-s) {
+                width: 95%;
             }
         }
-    }
-
-    &__wave-t {
-        position: relative;
-        top: -1px;
-    }
-
-    &__wave-b {
-        position: relative;
-        bottom: -6px;
     }
 
     @include respond(phone) {
-        background: $color-white;
-
-        &__wave-t,
-        &__wave-b {
+        & {
+            background: $color-white;
+            padding: 4rem 1rem;
+        }
+        &::before,
+        &::after {
             display: none;
         }
 
-        &__right {
-            grid-row: 1 / 2;
-        }
+        &__content-box {
+            & > * {
+                text-align: center;
+            }
 
-        &__left {
-            text-align: center;
-
-            & > h3 {
+            h3 {
                 width: 70%;
                 margin: 0 auto;
             }
 
-            & > p {
+            p {
+                width: 80%;
                 margin: 0 auto;
-                width: 85%;
             }
         }
 
         &__left,
         &__right {
-            grid-column: col-start 1 / -1;
+            grid-column: col-start 1 / col-end 12;
+        }
+
+        &__right {
+            grid-row: 1 / 2;    
+        }
+
+        .button-secondary {
+            display: inline-block;
+        }
+
+        .button-primary {
+            display: none;
+        }
+
+        &__img {
+            margin-bottom: 4rem;
+
+            img {
+                width: 65%
+            }
         }
     }
 
     @include respond(phone-s) {
-        &__left {
-            & > p {
+        &__content-box {
+            p {
+                width: 100%;
+            }
+        }
+
+        &__img {
+            img {
+                width: 75%;
+            }
+        }
+    }
+
+    @media (max-width: 25em) {
+        &__img {
+            img {
                 width: 85%;
             }
         }
