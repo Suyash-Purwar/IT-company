@@ -2,6 +2,10 @@
     padding: 2.5rem 1rem;
     grid-column-gap: 5rem;
 
+    @include respond(tab-landscape-s) {
+        grid-column-gap: 4rem;
+    }
+
     .heading-primary {
         margin-bottom: 4.4rem;
     }
@@ -12,6 +16,11 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-gap: 4rem;
+
+        @include respond(tab-landscape-s) {
+            grid-column: col-start / col-end 4;
+            grid-gap: 3rem;
+        }
     }
 
     &__text-contents {
@@ -24,18 +33,18 @@
         padding: 3rem 1.5rem;
 
         &--1 {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-        }
-
-        &--2 {
-            grid-column: 2 / 3;
+            grid-column: 1 / 3;
             grid-row: 1 / 2;
         }
 
-        &--3 {
-            grid-column: 2 / 3;
+        &--2 {
+            grid-column: 1 / 3;
             grid-row: 2 / 3;
+        }
+
+        &--3 {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
         }
     }
 

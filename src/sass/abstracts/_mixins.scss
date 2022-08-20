@@ -69,6 +69,12 @@ $breakpoint argument choices:
         };
     }
 
+    @if $breakpoint == tab-landscape-s {
+        @media (max-width: 64em) {   // 1024px
+            @content;
+        }
+    }
+
     @if $breakpoint == tab-landscape {
         @media (max-width: 75em) {   // 1200px
             @content
